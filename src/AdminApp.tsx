@@ -1,8 +1,8 @@
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminPanel from "./pages/admin/AdminPanel";
 import AdminLogin from "./pages/admin/AdminLogin";
+import AdminRegister from "./pages/admin/AdminRegister";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -12,6 +12,7 @@ const AdminApp = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AdminLogin />} />
+        <Route path="/register" element={<AdminRegister />} />
         <Route path="/dashboard/*" element={<AdminPanel />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
